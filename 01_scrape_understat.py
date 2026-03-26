@@ -6,7 +6,7 @@ import pandas as pd
 url_api    = "https://understat.com/main/getPlayersStats/"
 liga       = "La liga"
 temporadas = list(range(2014, 2025))
-espera     = 2  # espero un poco para no saturar el servidor
+espera     = 2  # esperar un poco para no saturar el servidor
 
 # no estoy seguro si siempre están todas
 columnas = [
@@ -24,7 +24,7 @@ headers = {
 def obtener_temporada(season):
     params = {"league": liga, "season": str(season)}
 
-    # a veces falla, por eso el try
+    # puede no funcionar, por eso el try
     try:
         resp = requests.post(url_api, data=params, headers=headers, timeout=20)
         resp.raise_for_status()
@@ -34,7 +34,7 @@ def obtener_temporada(season):
         return None
 
     if not data.get("success") or "players" not in data:
-        print(f"algo salió mal en temporada {season}: {list(data.keys())}")
+        print(f"algo salio mal en temporada {season}: {list(data.keys())}")
         return None
 
     players = data["players"]
@@ -45,7 +45,7 @@ def obtener_temporada(season):
     columnas_presentes = [c for c in columnas if c in df.columns]
     columnas_faltantes = [c for c in columnas if c not in df.columns]
     if columnas_faltantes:
-        print(f"  aviso: no encontré estas columnas: {columnas_faltantes}")
+        print(f"  no encontre estas columnas: {columnas_faltantes}")
 
     df = df[columnas_presentes].copy()
     df.rename(columns={"id": "player_id"}, inplace=True)
@@ -71,7 +71,7 @@ def main():
             time.sleep(espera)
 
     if not todos_los_datos:
-        print("no se obtuvo nada, algo falló")
+        print("no se obtuvo nada, algo fallo")
         return
 
     df_total = pd.concat(todos_los_datos, ignore_index=True)
