@@ -52,4 +52,4 @@ figures/                     all charts
 
 ## Tools
 
-Python · pandas · numpy · matplotlib · seaborn · statsmodels · requests · rapidfuzz
+Python · pandas · numpy · matplotlib · seaborn · statsmodels · requests
