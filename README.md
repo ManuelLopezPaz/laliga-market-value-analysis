@@ -2,6 +2,8 @@
 
 **ManuelLopezPaz**
 
+Write-up available at: www.manuellopezpaz.com/la-liga-market-value-analysis
+
 ---
 
 ## Questions
