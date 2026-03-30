@@ -2,7 +2,7 @@
 
 **ManuelLopezPaz**
 
-Write-up available at: www.manuellopezpaz.com/la-liga-market-value-analysis
+Write-up available at: [www.manuellopezpaz.com/la-liga-market-value-analysis](https://www.manuellopezpaz.com/writeups/la-liga-market-value-analysis.html)
 
 ---
 
